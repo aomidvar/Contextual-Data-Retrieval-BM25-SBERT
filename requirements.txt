@@ -1,0 +1,8 @@
+gradio
+transformers
+sentence-transformers
+faiss-cpu
+datasets
+openai
+elasticsearch
+rank_bm25
