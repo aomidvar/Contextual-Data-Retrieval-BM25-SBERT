@@ -60,14 +60,14 @@ def generate_response_gpt4(query, context_snippets):
     input_text = f"Q: {query}\nHere is some relevant information:\n{context}\nBased on this information, provide a unique answer to the question."
 
     try:
+        # Use the new ChatCompletion method from OpenAI v1.0.0+
         response = openai.ChatCompletion.create(
-            model="gpt-4",  # Use GPT-4
+            model="gpt-4",  # Specify GPT-4
             messages=[
                 {"role": "system", "content": "You are a helpful assistant."},
                 {"role": "user", "content": input_text}
             ],
-            max_tokens=200,  # Adjust based on the expected response length
-            clean_up_tokenization_spaces=True
+            max_tokens=200  # Adjust based on the expected response length
         )
         return response['choices'][0]['message']['content']
     except Exception as e:
