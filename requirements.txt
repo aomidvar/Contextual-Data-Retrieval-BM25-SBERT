@@ -6,3 +6,4 @@ datasets
 openai
 elasticsearch
 rank_bm25
+gunicorn
