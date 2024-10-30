@@ -20,7 +20,7 @@ bm25 = None
 def load_data_and_create_index():
     global dataset, index, sbert_model, bm25
     # Load a smaller subset of the dataset to speed up testing (e.g., 10% of the data)
-    dataset = load_dataset('ms_marco', 'v2.1', split='train[:20000]')  # Example: smaller set for testing
+    dataset = load_dataset('ms_marco', 'v2.1', split='train[:5000]')  # Example: smaller set for testing
 
     # Load SBERT model for high-quality sentence embeddings
     sbert_model = SentenceTransformer('paraphrase-MiniLM-L6-v2')  # Lightweight model for efficient encoding
